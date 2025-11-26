@@ -3,3 +3,11 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 *.code-workspace
+
+# Large dataset extracts, pull them with scripts/fetch_data.sh
+Movie/credits.csv
+Movie/ratings.csv
+Movie/datasets/
+
+# Trained artifacts are rebuilt with train.py
+models/*.pkl
