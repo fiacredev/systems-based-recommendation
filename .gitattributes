@@ -1,0 +1,8 @@
+# Keep the line endings the same on every machine.
+*.py text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.ipynb text eol=lf
+
+# The dataset files are large, do not try to diff them.
+Movie/*.csv -diff
