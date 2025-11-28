@@ -1,12 +1,18 @@
-"""Movie recommendation API."""
-
+import joblib
 from fastapi import FastAPI
+from recommender import hybrid
 
-from recommender import hybrid, load_artifacts
+# Load model artifacts once when the application starts
+artifacts = joblib.load("models/hybrid_recommender.pkl")
 
-app = FastAPI(title="Movie Recommendation API")
+svd = artifacts["svd"]
+cosine_sim = artifacts["cosine_sim"]
+indices = artifacts["indices"]
+indices_map = artifacts["indices_map"]
+id_map = artifacts["id_map"]
+smd = artifacts["smd"]
 
-artifacts = load_artifacts()
+app = FastAPI()
 
 
 @app.get("/")
@@ -16,6 +22,5 @@ def home():
 
 @app.get("/recommend")
 def recommend(userId: int, title: str):
-    """Return hybrid recommendations for a user and a movie they like."""
-    movies = hybrid(artifacts, userId, title)
+    movies = hybrid(userId, title)
     return movies.to_dict(orient="records")
