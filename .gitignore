@@ -1,13 +1,28 @@
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.env
+
+# Notebooks
 .ipynb_checkpoints/
+
+# Editors and operating systems
 .DS_Store
-*.code-workspace
+.idea/
+.vscode/
+
+# Local dataset mirror and archives
+Movie/datasets/
+datasets.zip
 
 # Large dataset extracts, pull them with scripts/fetch_data.sh
 Movie/credits.csv
 Movie/ratings.csv
-Movie/datasets/
 
 # Trained artifacts are rebuilt with train.py
 models/*.pkl
