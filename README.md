@@ -1,10 +1,36 @@
 # Movie Project ML
 
-A project to build a movie recommendation system from the MovieLens and TMDB data.
+A movie recommendation system built from the MovieLens ratings and the TMDB movie
+metadata.
 
-## The data
+## The idea
 
-The dataset is the MovieLens ratings joined with the TMDB movie metadata. It is
-published on Kaggle as *Movie Dataset Collection*, and the files land in `Movie/`.
+Two models do the work here. A content based model finds movies that look alike, and a
+collaborative filtering model ranks them based on what people actually rated.
 
-Nothing here is finished yet.
+## Project layout
+
+```
+.
+├── Movie/       the dataset
+├── models/      the trained artifacts
+└── movie.ipynb  the notebook where it all happens
+```
+
+## Getting the data
+
+The dataset is published on Kaggle as *Movie Dataset Collection*. Download it and drop
+the files in `Movie/`.
+
+## Running the notebook
+
+```bash
+pip install -r requirements.txt
+jupyter lab
+```
+
+Open `movie.ipynb` and run it from the top.
+
+## Contact
+
+[fiacredeveloper@gmail.com](mailto:fiacredeveloper@gmail.com)
